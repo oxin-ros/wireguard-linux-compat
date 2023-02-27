@@ -34,9 +34,9 @@
 #error "WireGuard requires Linux >= 3.10"
 #endif
 
-#if LINUX_VERSION_CODE >= KERNEL_VERSION(5, 6, 0)
-#error "WireGuard has been merged into Linux >= 5.6 and therefore this compatibility module is no longer required."
-#endif
+// #if LINUX_VERSION_CODE >= KERNEL_VERSION(5, 6, 0)
+// #error "WireGuard has been merged into Linux >= 5.6 and therefore this compatibility module is no longer required."
+// #endif
 
 #if defined(ISRHEL7)
 #include <linux/skbuff.h>
@@ -1132,6 +1132,7 @@ struct dst_cache_pcpu {
 		struct in6_addr in6_saddr;
 	};
 };
+/*
 #define COMPAT_HAS_DEFINED_DST_CACHE_PCPU
 static inline void dst_cache_reset_now(struct dst_cache *dst_cache)
 {
@@ -1150,6 +1151,7 @@ static inline void dst_cache_reset_now(struct dst_cache *dst_cache)
 		dst_release(dst);
 	}
 }
+*/
 #endif
 
 #if defined(ISUBUNTU1604) || defined(ISRHEL7)
